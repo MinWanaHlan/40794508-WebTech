@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: "Poppins", sans-serif;
+    /* background: linear-gradient(135deg, #5f63b8, #7c83ff); */
+    background-image: url("images/bg1.png");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main intro container */
+.intro-container {
+    background: white;
+    padding: 50px 40px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 0 25px rgba(0,0,0,0.2);
+
+    width: 90%;
+    max-width: 500px;
+}
+
+/* Logo */
+.logo {
+    width: 120px;
+    max-width: 40%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+/* Title */
+.title {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+/* Description */
+.description {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #444;
+}
+
+/* Button group */
+.button-group {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Buttons */
+button {
+    padding: 15px 40px;
+    font-size: 20px;
+    background: #5f63b8;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #4044a3;
+}
+
+/* Quit button */
+#quitBtn {
+    background: #d9534f;
+}
+
+#quitBtn:hover {
+    background: #b52b27;
+}
+
+/* Quit Modal Background */
+.quit-modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0,0,0,0.6);
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: 0.3s;
+}
+
+/* Show modal */
+.quit-modal.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Modal box */
+.quit-content {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    width: 90%;
+    max-width: 320px;
+}
+
+/* Quit buttons container */
+.quit-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+/* Cancel button */
+#cancelQuit {
+    background: gray;
+}
+
+#cancelQuit:hover {
+    background: #555;
+}
+
+/* OK button */
+#confirmQuit {
+    background: #d9534f;
+}
+
+#confirmQuit:hover {
+    background: #b52b27;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 600px) {
+
+    .intro-container {
+        padding: 30px 20px;
+    }
+
+    .title {
+        font-size: 28px;
+    }
+
+    .description {
+        font-size: 16px;
+    }
+
+    button {
+        padding: 12px 25px;
+        font-size: 16px;
+    }
+
+    .logo {
+        width: 90px;
+    }
+
+}
+
+Fade-in animation
+.intro-container {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeSlideUp 1s ease forwards;
+}
+
+/* Logo animation delay */
+.logo {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeSlideUp 1s ease forwards;
+    animation-delay: 0.2s;
+}
+
+/* Title delay */
+.title {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeSlideUp 1s ease forwards;
+    animation-delay: 0.4s;
+}
+
+/* Description delay */
+.description {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeSlideUp 1s ease forwards;
+    animation-delay: 0.6s;
+}
+
+/* Buttons delay */
+.button-group {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeSlideUp 1s ease forwards;
+    animation-delay: 0.8s;
+    margin-top: 40px;
+    
+}
+
+
+/* Keyframes */
+@keyframes fadeSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+

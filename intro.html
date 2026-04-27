@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman Game - Intro</title>
+    <link rel="stylesheet" href="intro.css">
+    <audio id="bgMusic" autoplay loop>
+      <source src="sounds/backgroundsound.mp3" type="audio/mp3">
+    </audio>
+</head>
+<body>
+
+
+<div class="intro-container">
+
+    <!-- Logo -->
+    <img src="images/Logo.png" alt="Hangman Logo" class="logo">
+
+    <!-- Title -->
+    <h1 class="title">HANGMAN GAME</h1>
+    
+    <!-- Description -->
+    <p class="description">
+        Try to guess the hidden word before the hangman is complete.
+    </p>
+
+    <!-- Buttons -->
+    <div class="button-group">
+        <button id="startBtn">Start Game</button>
+        <button id="quitBtn">Quit</button>
+    </div>
+
+</div>
+
+
+<!-- Quit Confirmation Modal -->
+<div class="quit-modal">
+    <div class="quit-content">
+
+        <h2>Quit Game?</h2>
+
+        <p>Are you sure you want to quit?</p>
+
+        <div class="quit-buttons">
+            <button id="cancelQuit">Cancel</button>
+            <button id="confirmQuit">OK</button>
+        </div>
+
+    </div>
+</div>
+
+<script src="scripts/intro.js"></script>
+
+</body>
+</html>

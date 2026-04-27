@@ -1,0 +1,114 @@
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: "Poppins", sans-serif;
+    /* background: linear-gradient(135deg, #5f63b8, #7c83ff); */
+    background-image: url("images/bg1.png");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.difficulty-container {
+
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    width: 350px;
+
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+
+    animation: fadeIn 0.8s ease;
+}
+
+.difficulty-logo {
+    width: 80px;
+    margin-bottom: 10px;
+}
+
+.difficulty-buttons {
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+button {
+
+    padding: 12px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.easy {
+
+    background: #28a745;
+    color: white;
+}
+
+.medium {
+
+    background: #ffc107;
+}
+
+.hard {
+
+    background: #dc3545;
+    color: white;
+}
+
+.back-btn {
+
+    margin-top: 20px;
+    background: gray;
+    color: white;
+}
+
+button:hover {
+
+    transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+@media (max-width: 480px) {
+
+    .difficulty-container {
+
+        padding: 25px;
+        max-width: 90%;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .difficulty-logo {
+        width: 60px;
+    }
+
+}
