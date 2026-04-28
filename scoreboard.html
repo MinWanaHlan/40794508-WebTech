@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scoreboard</title>
+
+    <link rel="stylesheet" href="intro.css">
+
+    <style>
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .highlight {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="intro-container">
+
+        <h1 class="title">🏆 Score Ranking</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Name</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody id="scoreTable"></tbody>
+        </table>
+
+        <div class="button-group">
+            <button onclick="playAgain()">Play Again</button>
+        </div>
+
+    </div>
+
+    <script src="scripts/scoreboard.js"></script>
+</body>
+
+</html>

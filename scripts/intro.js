@@ -13,7 +13,7 @@ startBtn.addEventListener("click", () => {
     sessionStorage.setItem("gameStarted", "true");
 
     // Go to game page
-    window.location.href = "difficulty.html";
+    window.location.href = "player.html";
 
 });
 

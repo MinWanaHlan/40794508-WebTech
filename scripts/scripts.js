@@ -9,6 +9,7 @@ const guessesText = document.querySelector(".guesses-text b");
 const keyboardDiv = document.querySelector(".keyboard");
 const gameModal = document.querySelector(".game-modal");
 const playAgainBtn = document.querySelector(".play-again");
+const viewRankingBtn = document.querySelector(".view-ranking");
 
 
 const correctSound = new Audio("sounds/correct.mp3");
@@ -133,10 +134,50 @@ const gameOver = (isVictory) => {
 
         gameModal.classList.add("show");
 
-        
+        // SAVE SCORE (correct place)
+        saveScoreToLeaderboard(score);
+
+        // Clear session score
+        sessionStorage.removeItem("score");
+
+        // Single clean delay for redirect
+        setTimeout(() => {
+
+        }, 3000); // give user more time to see result
 
     }, 300);
 };
+
+function saveScoreToLeaderboard(finalScore) {
+
+    const playerName = localStorage.getItem("currentPlayer") || "Guest";
+
+    let scores = JSON.parse(localStorage.getItem("scores")) || [];
+
+    // Check if player already exists
+    const existingPlayer = scores.find(player => player.name === playerName);
+
+    if (existingPlayer) {
+
+        // Keep the BEST score only
+        if (finalScore > existingPlayer.score) {
+            existingPlayer.score = finalScore;
+        }
+
+    } else {
+
+        // Add new player
+        scores.push({
+            name: playerName,
+            score: finalScore
+        });
+    }
+
+    // Sort highest → lowest
+    scores.sort((a, b) => b.score - a.score);
+
+    localStorage.setItem("scores", JSON.stringify(scores));
+}
 
 
 // ============================
@@ -227,7 +268,11 @@ playAgainBtn.addEventListener("click", () => {
     getRandomWord();
 });
 
-
+// view ranking
+viewRankingBtn.addEventListener("click", () => {
+    sessionStorage.removeItem("score");
+    window.location.href = "scoreboard.html";
+});
 
 // restart SAME word
 restartBtn.addEventListener("click", () => {
