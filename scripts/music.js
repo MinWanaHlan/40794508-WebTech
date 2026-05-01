@@ -19,12 +19,12 @@ const isDifficultyPage = path.includes("difficulty.html");
 if (isGamePage) {
 
     // gameplay LOW volume
-    window.globalMusic.volume = 0.2;
+    window.globalMusic.volume = 0.1;
 
 } else {
 
     // difficulty + intro NORMAL volume
-    window.globalMusic.volume = 0.3;
+    window.globalMusic.volume = 0.2;
 
 }
 
